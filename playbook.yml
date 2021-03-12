@@ -63,15 +63,15 @@
       timezone:
         name: "{{ datos_zona_horaria.diff.before.name }}"
 
-#    - name: "Descargarnos el fichero del nodo_02"
-#      synchronize:
-#        src: "/tmp/datos_horarios_nodo_02.txt"
-#        dest: "/tmp/datos_horarios_nodo_02.txt"
-#        mode: pull
-#      delegate_to: master
-
     - copy:
         src: /tmp/datos_horarios_nodo_02.txt
         dest: /tmp/datos_horarios_nodo_02.txt
         remote_src: yes
       delegate_to: master
+
+#   - name: "Descargarnos el fichero del nodo_02"
+#     synchronize:
+#       src: "/tmp/datos_horarios_nodo_02.txt"
+#       dest: "/tmp/datos_horarios_nodo_02.txt"
+#       mode: pull
+#     delegate_to: master
